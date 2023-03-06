@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     container: {
         width: "100%",
         flex: 0,
-        backgroundcolor: "gold",
+        backgroundColor: "green",
         alignitems: "center",
         justifyContent: "center",
     },

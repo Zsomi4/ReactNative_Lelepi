@@ -1,11 +1,16 @@
 import React from "react";
-import { TextInput } from "react-native";
+import { Button, TextInput } from "react-native";
 import { View, Text, StyleSheet } from "react-native-web";
 
 export default function Body() {
     const [aedge, setAedge] = React.useState('');
     const [bedge, setBedge] = React.useState('');
     const [cedge, setCedge] = React.useState('');
+    const [volume, setVolume] = React.useState('');
+    function onCalcButton() {
+        let volume = aedge * bedge * cedge;
+        setVolume(volume)
+    }
     return (
         <View style={styles.container}>
             <Text>A oldal</Text>
@@ -22,6 +27,15 @@ export default function Body() {
             <TextInput 
             onChangeText={(res) => (setCedge(res))}
             style={styles.input}/>
+
+            <Button title="Számol"
+            onPress={onCalcButton}/>
+
+            <Text>Térfogat</Text>
+            <TextInput 
+            onChangeText={(res) => (setVolume(res))}
+            style={styles.input}
+            value={volume}/>
         </View>
     );
 }
